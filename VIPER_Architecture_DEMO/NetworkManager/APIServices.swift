@@ -10,7 +10,7 @@ import Foundation
 typealias AnyDict = [String: Any]
 typealias AnyDictString = [String: String]
 
-let DEV_ROOT_POINT = "https://jarvis.mynationvoice.com/"
+let DEV_ROOT_POINT = ""
 let PROD_ROOT_POINT = "https://jarvis.mynationvoice.com/"
 
 let contentValue = "application/json"
@@ -37,6 +37,7 @@ var BaseURL: String {
 
 enum APIServices {
     case getNews(parameters: AnyDict)
+    case userData
 }
 
 extension APIServices {
@@ -45,6 +46,7 @@ extension APIServices {
         var servicePath: String = "sub-category/"
         switch self {
         case .getNews: servicePath = apiDomain + servicePath + "storylist"
+        case .userData: servicePath = "https://jsonplaceholder.typicode.com/todos"
         }
         
         return BaseURL + servicePath
@@ -78,7 +80,7 @@ extension APIServices {
     
     var httpMethod: String {
         switch self {
-        case .getNews :
+        case .getNews, .userData :
             return "GET"
         default:
             return "POST"

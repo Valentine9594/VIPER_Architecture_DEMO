@@ -26,10 +26,10 @@ class HomeTableViewCell: UITableViewCell {
 
     }
     
-    func bindData(story: DataStory?) {
-        lblTitle.text = story?.title ?? "Title"
-        lblDetail.text = story?.updatedOn ?? "12/10/2022"
-        lblDescription.text = story?.storyDescription ?? "Description"
-        imgNews.setImageFromURL(in: story?.promoLarge)
+    func bindData(story: User?) {
+        lblTitle.text = (story?.title) ?? "Title"
+        lblDetail.text = "\(story?.id ?? 0)"
+        lblDescription.text = "\(story?.completed ?? false)"
+        imgNews.setImageFromURL(in: story?.title!)
     }
 }

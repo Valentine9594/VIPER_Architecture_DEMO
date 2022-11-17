@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+// MARK: - User
+typealias UserData = [User]
+
+struct User: Codable {
+    let userId, id: Int?
+    let title: String?
+    let completed: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "userId"
+        case id
+        case title
+        case completed
+    }
+}

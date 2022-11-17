@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomePresenterToInteractor {
-    var stories: [DataStory]? { get }
+    var stories: UserData? { get }
     func fetchStoriesFromAPI()
 }
 
@@ -42,7 +42,7 @@ protocol HomeViewControllerToPresenter {
     func showListController()
     func fetchStories()
     func getTotalCount() -> Int
-    func getItemAt(index: Int) -> DataStory?
+    func getItemAt(index: Int) -> User?
 }
 
 protocol HomePresenterToRouter {
@@ -65,7 +65,7 @@ final class HomePresenter: HomeInteratorToPresenter {
     var view: HomePresenterToViewController?
     var router: HomePresenterToRouter?
     
-    var stories: [DataStory]? {
+    var stories: UserData? {
         return interactor?.stories
     }
     
@@ -79,7 +79,7 @@ extension HomePresenter: HomeViewControllerToPresenter {
         interactor?.fetchStoriesFromAPI()
     }
     
-    func getItemAt(index: Int) -> DataStory? {
+    func getItemAt(index: Int) -> User? {
         return stories?[index]
     }
     

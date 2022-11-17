@@ -72,7 +72,7 @@ class APIManager {
             }
             
             // serialise the data / NSData object into Dictionary [String : Any]
-            guard (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? AnyDict != nil else {
+            guard (try? JSONSerialization.jsonObject(with: content)) != nil else {
                 print("Not containing JSON")
                 return
             }
