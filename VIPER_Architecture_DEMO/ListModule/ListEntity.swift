@@ -10,7 +10,7 @@ import Foundation
 // MARK: - User
 typealias UserData = [User]
 
-struct User: Codable {
+struct User: Codable, Equatable {
     let userId, id: Int?
     let title: String?
     let completed: Bool?
