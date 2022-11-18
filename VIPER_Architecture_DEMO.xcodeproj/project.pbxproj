@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18303EFD29264B86002F512A /* HomeInteractorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18303EFC29264B86002F512A /* HomeInteractorUnitTests.swift */; };
 		18AEA1E7292525FB00BB522F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AEA1E6292525FB00BB522F /* HomeViewController.xib */; };
 		18AEA1E92925261A00BB522F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AEA1E82925261A00BB522F /* HomeTableViewCell.xib */; };
 		2B920E93C8CE7D7111369DA2 /* Pods_VIPER_Architecture_DEMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F932EFC93E8F49D1BF74A8B4 /* Pods_VIPER_Architecture_DEMO.framework */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18303EFC29264B86002F512A /* HomeInteractorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorUnitTests.swift; sourceTree = "<group>"; };
 		18AEA1E6292525FB00BB522F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		18AEA1E82925261A00BB522F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		9203B8BD2924DDA200A8A351 /* VIPER_Architecture_DEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Architecture_DEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				92DF08FE2926328E0088BB84 /* VIPER_Architecture_DEMOTests.swift */,
+				18303EFC29264B86002F512A /* HomeInteractorUnitTests.swift */,
 			);
 			path = VIPER_Architecture_DEMOTests;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92DF08FF2926328E0088BB84 /* VIPER_Architecture_DEMOTests.swift in Sources */,
+				18303EFD29264B86002F512A /* HomeInteractorUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
