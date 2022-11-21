@@ -21,7 +21,7 @@ struct NewsDataClass: Codable {
     let stories: [DataStory]?
     let mustSee: MustSee?
     let meta: Meta?
-
+    
     enum CodingKeys: String, CodingKey {
         case categories
         case subCategoryData = "sub_category_data"
@@ -36,7 +36,7 @@ struct NewsDataClass: Codable {
 struct Category: Codable {
     let title, completeSlug, colorCode1, colorCode2: String?
     let selected: Bool?
-
+    
     enum CodingKeys: String, CodingKey {
         case title
         case completeSlug = "complete_slug"
@@ -51,7 +51,7 @@ struct Meta: Codable {
     let totalRecords, totalNoOfPage: Int?
     let lastPage: Bool?
     let currPageNo, limit: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case totalRecords = "total_records"
         case totalNoOfPage = "total_no_of_page"
@@ -65,7 +65,7 @@ struct Meta: Codable {
 struct MustSee: Codable {
     let label, mustSeeDescription: String?
     let stories: [MustSeeStory]?
-
+    
     enum CodingKeys: String, CodingKey {
         case label
         case mustSeeDescription = "description"
@@ -81,7 +81,7 @@ struct MustSeeStory: Codable {
     let promoLarge: String?
     let shortTitle: String?
     let completeSlug, updatedOn, colorCode: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, type, title
         case promoLarge = "promo_large"
@@ -112,7 +112,7 @@ struct DataStory: Codable {
     let imageAltText: String?
     let readingTime: ReadingTime?
     let colorCode, createdOn, storyDescription: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, type
         case updatedOn = "updated_on"
@@ -140,7 +140,7 @@ struct SubCategoryData: Codable {
     let title, categoryTitle, categorySlug, subCategorySlug: String?
     let completeSlug, metaTitle, metaDescription, metaKeywords: String?
     let colorCode1, colorCode2: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case title
         case categoryTitle = "category_title"

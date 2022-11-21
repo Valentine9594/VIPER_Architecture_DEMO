@@ -12,8 +12,8 @@ final class VIPER_Architecture_DEMOTests: XCTestCase {
 
     override func setUpWithError() throws {
         var view: HomeViewController?
-        let interactor: HomeInteractor?
-        let router: HomeRouter?
+        var interactor: HomeInteractor?
+        var router: HomeRouter?
         var presenter: HomePresenter?
         
         view?.presenter = presenter

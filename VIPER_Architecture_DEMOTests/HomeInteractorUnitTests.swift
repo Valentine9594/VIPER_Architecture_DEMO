@@ -9,9 +9,9 @@ import XCTest
 @testable import VIPER_Architecture_DEMO
 
 final class HomeInteractorUnitTests: XCTestCase {
-
+    
     var sut: HomeInteractor?
-      var sutOutput: HomePresenter?
+    var sutOutput: HomePresenter?
     
     override func setUp() {
         sut = HomeInteractor()
@@ -21,14 +21,14 @@ final class HomeInteractorUnitTests: XCTestCase {
         
         
         super.setUp()
-      }
-      
-      override func tearDown() {
+    }
+    
+    override func tearDown() {
         sut = nil
         sutOutput = nil
         super.tearDown()
-      }
-
+    }
+    
     func testAPIResponse_Success() throws {
         //ARRANGE
         let resource = APIManager.sharedInstance
@@ -81,12 +81,12 @@ final class HomeInteractorUnitTests: XCTestCase {
             }
         }
     }
-
+    
     func testPerformanceExample() throws {
         
         self.measure {
-
+            
         }
     }
-
+    
 }

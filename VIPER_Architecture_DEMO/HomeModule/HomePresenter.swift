@@ -9,17 +9,18 @@ import Foundation
 import UIKit
 
 protocol HomePresenterToInteractor {
-    var stories: UserData? { get }
+    var storiesCount: Int { get }
     func fetchStoriesFromAPI()
+    func getItemAt(index: Int) -> User?
 }
 
-protocol HomeInteratorToPresenter {
+protocol HomeInteratorToPresenter: AnyObject {
     func dataFetchedSuccessfully()
     func dataFetchedFailed(error: Error?)
 }
 
 protocol ToViewController {
-//    func showAlert()
+    //    func showAlert()
 }
 
 extension ToViewController {
@@ -34,14 +35,15 @@ extension ToViewController {
     }
 }
 
-protocol HomePresenterToViewController: ToViewController {
+protocol HomePresenterToViewController: AnyObject, ToViewController {
     func reloadData()
 }
 
 protocol HomeViewControllerToPresenter {
+    var storiesCount: Int { get }
+    
     func showListController()
     func fetchStories()
-    func getTotalCount() -> Int
     func getItemAt(index: Int) -> User?
 }
 
@@ -60,13 +62,13 @@ final class HomePresenter: HomeInteratorToPresenter {
             view?.showAlert(title: "Danger!", message: error.localizedDescription)
         }
     }
-
+    
     var interactor: HomePresenterToInteractor?
-    var view: HomePresenterToViewController?
+    weak var view: HomePresenterToViewController?
     var router: HomePresenterToRouter?
     
-    var stories: UserData? {
-        return interactor?.stories
+    var storiesCount: Int {
+        return interactor?.storiesCount ?? 0
     }
     
     func showListController() {
@@ -75,15 +77,13 @@ final class HomePresenter: HomeInteratorToPresenter {
 }
 
 extension HomePresenter: HomeViewControllerToPresenter {
+    
     func fetchStories() {
         interactor?.fetchStoriesFromAPI()
     }
     
     func getItemAt(index: Int) -> User? {
-        return stories?[index]
+        return interactor?.getItemAt(index: index)
     }
     
-    func getTotalCount() -> Int {
-        return stories?.count ?? 0
-    }
 }
